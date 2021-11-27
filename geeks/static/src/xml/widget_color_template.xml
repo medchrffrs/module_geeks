@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+<!--      <t t-name="OWLColorPill" owl="1">-->
+<!--           <span t-attf-class="o_color_pill o_color_{{props.pill_nos}}-->
+<!--           {{props.active and 'active' or ''}}"-->
+<!--           t-att-data-val="props.pill_nos"-->
+<!--           t-on-click="pillClicked"-->
+<!--           t-attf-title="This color is used in {{props.book_count or 0 }} books."-->
+<!--           />-->
+<!--      </t>-->
+<!--      <span t-name="OWLFieldColorPills" owl="1" class="o_int_colorpicker" t-on-color-updated="colorUpdated">-->
+<!--           <t t-foreach="totalColors" t-as='pill_nos'>-->
+<!--                <ColorPill t-if="mode === 'edit' or value == pill_nos"-->
+<!--                pill_nos='pill_nos' active='value == pill_nos'-->
+<!--                book_count="colorGroupData[pill_nos]"-->
+<!--                />-->
+<!--           </t>-->
+<!--      </span>-->
+
+    <t t-name="OWLColorPill" owl="1">
+       <span t-attf-class="o_color_pill o_color_{{props.pill_nos}}
+       {{props.active and 'active' or ''}}"
+       t-on-click="pillClicked"
+       />
+    </t>
+    <span t-name="OWLFieldColorPills" owl="1" class="o_int_colorpicker" t-on-color-updated="colorUpdated">
+       <t t-foreach="totalColors" t-as='pill_nos'>
+            <ColorPill
+                    t-if="mode === 'edit' or value == pill_nos"
+                    pill_nos='pill_nos' active='value == pill_nos'
+            />
+       </t>
+    </span>
+
+</templates>

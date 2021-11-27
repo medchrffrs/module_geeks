@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="assets_backend" name="Geeks assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+<!--                <script type="text/javascript" src="/geeks/static/src/js/basic_geeks.js"/>-->
+                <script type="text/javascript" src="/geeks/static/src/js/progressbar_circular_geeks.js"/>
+<!--                <script type="text/javascript" src="/geeks/static/src/js/color_geeks.js"/>-->
+                <link type="text/scss" href="/geeks/static/src/scss/style_widgets.scss" rel="stylesheet"/>
+            </xpath>
+        </template>
+
+    </data>
+
+</odoo>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="geeks_geeks_form" model="ir.ui.view">
+            <field name="name">geeks.geeks.form</field>
+            <field name="model">geeks.geeks</field>
+            <field name="arch" type="xml">
+                <form string="Greeks">
+                    <sheet>
+                        <field name="name" string='Geeks'/> <br/>
+                        <field name="color" widget="geeks_color"/> <br/>
+                        <field name="partner_id"  string='Geeks'/> <br/>
+                        <field name="subject"  string='Geeks'/> <br/>
+
+                        <field name="progress"  widget="geeks_progressbar_circular" /> <br/>
+                        <field name="progressbar"/> <br/>
+
+                        <field name="Note"  string='Geeks'/> <br/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_geeks_geeks_tree" model="ir.ui.view">
+            <field name="name">view.geeks.geeks.tree</field>
+            <field name="model">geeks.geeks</field>
+            <field name="arch" type="xml">
+                <tree string="Greeks">
+                    <field name="name" />
+                    <field name="color" widget="geeks_color"/>
+                    <field name="subject" />
+                    <field name="Note" />
+                    <field name="partner_id" />
+                    <field name="progress"/>
+                    <field name="progressbar"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="geeks_geeks_action" model="ir.actions.act_window">
+            <field name="name">Geeks</field>
+            <field name="res_model">geeks.geeks</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Geeks.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_root_geeks_geeks"
+                name="Greeks"
+                web_icon="geeks,static/src/img/icon.png" />
+
+
+        <menuitem id="menu_geeks_geeks"
+            name="Greeks Greeks" sequence="1"
+            parent="menu_root_geeks_geeks" />
+
+        <menuitem action="geeks_geeks_action"
+                id="menu_geeks" sequence="10"
+                parent="menu_geeks_geeks" />
+
+
+
+    </data>
+
+</odoo>
